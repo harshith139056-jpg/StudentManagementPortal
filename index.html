@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Management Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== LOGIN SCREEN (demo only: no real password check) ========== -->
+  <section id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="logo">SM</div>
+      <h1>Student Management Portal</h1>
+      <p class="muted">Demo login. No real password is checked.</p>
+
+      <label for="roleSelect">Login as</label>
+      <select id="roleSelect">
+        <option value="admin">Admin</option>
+        <option value="faculty">Faculty</option>
+        <option value="student">Student</option>
+      </select>
+
+      <div id="personWrap" class="hidden">
+        <label for="personSelect">Select user</label>
+        <select id="personSelect"></select>
+      </div>
+
+      <button id="loginBtn" class="btn primary full">Enter Portal</button>
+      <p class="muted small">Sample data is stored only in this browser (localStorage).</p>
+    </div>
+  </section>
+
+  <!-- ========== MAIN APPLICATION ========== -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="logo small">SM</span> Student Portal</div>
+      <nav id="nav"></nav>
+      <div class="sidebar-bottom">
+        <button id="resetBtn" class="link-btn hidden">Reset demo data</button>
+        <button id="logoutBtn" class="link-btn">Log out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Dashboard</h2>
+          <p class="muted" id="pageSub"></p>
+        </div>
+        <div class="user-chip" id="userChip"></div>
+      </header>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <!-- Reusable dialog for add / edit forms -->
+  <dialog id="dialog">
+    <form method="dialog" id="dialogForm"></form>
+  </dialog>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
